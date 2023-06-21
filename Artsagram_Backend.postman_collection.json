@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "75e1bf9b-df31-460a-a47b-5230f2789951",
+		"name": "Artsagram_Backend",
+		"description": "# Working with preset requests\n\nIn this workspace, you’ll find a [collection](https://learning.postman.com/docs/collections/collections-overview) with preset requests for a basic CRUD operation. Each request contains a base URL [variable](https://learning.postman.com/docs/sending-requests/variables) with your base URL filled in.\n\n**Follow these steps to customize your requests:**\n\n**Step 1:** Build each request by updating its path.\n\nAdd the request’s path after the `base_url` variable.\n\nYou can also add query parameters, body, and other required details.\n\n<img src=\"https://skills-assets.pstmn.io/growth-experiments/GRW-358/URL.gif\" alt=\"\">\n\n**Step 2:** Send the request and save it. Don’t forget to update the request names.\n\n**Step 3:** Feel free to delete the requests that you don’t need.\n\n\n# Working with preset environments\n\nIn this workspace, you’ll find preset [environments](https://learning.postman.com/docs/sending-requests/managing-environments) for local, staging, and production. Each environment contains variables for your base URL and authorization (auth) token.\n\n**Follow these steps to customize your environments:**\n\n**Step 1:** Update the variables in each environment and save them. Feel free to add or remove variables.\n\n**Step 2:** Activate the environment to begin testing in it.\n\n<img src=\"https://skills-assets.pstmn.io/growth-experiments/GRW-358/Environments.gif\" alt=\"\">",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28109015"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "firstName",
+							"value": "Test",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "User",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "test1@test.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "picture",
+							"type": "file",
+							"src": "/C:/Users/Dell/Pictures/donate a smile.png"
+						},
+						{
+							"key": "location",
+							"value": "abc",
+							"type": "text"
+						},
+						{
+							"key": "occupation",
+							"value": "xyz",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/register",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"test@test.com\",\r\n    \"password\":\"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OTJjNzFlZTY0NWI1YzhlODhlNTNjZSIsImlhdCI6MTY4NzM0MTgzOX0._dMPKUs-P2ExCrVZ5X45tbxnzvbt3hRJ7hoPshxsFAk",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3001",
+			"type": "string"
+		}
+	]
+}
